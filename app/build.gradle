@@ -3,6 +3,8 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.apollographql.apollo'
 
+import com.apollographql.apollo.compiler.OperationIdGenerator
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
@@ -24,14 +26,21 @@ android {
 
 apollo {
     generateKotlinModels = true
-    onCompilationUnits {
-        operationIdGenerator = new com.apollographql.apollo.compiler.OperationIdGenerator() {
-            String apply(String operationDocument, String operationFilepath) {
-                return "CompilationUnits " + varientName
-            }
-
-            String version = "v5000"
+//    onCompilationUnit {
+//        operationIdGenerator = new OperationIdGenerator() {
+//            String apply(String operationDocument, String operationFilepath) {
+//                return "CompilationUnits " + varientName
+//            }
+//
+//            String version = "v5000"
+//        }
+//    }
+    operationIdGenerator = new OperationIdGenerator() {
+        String apply(String operationDocument, String operationFilepath) {
+            return "CompilationUnits " + varientName
         }
+
+        String version = "v5000"
     }
 }
 

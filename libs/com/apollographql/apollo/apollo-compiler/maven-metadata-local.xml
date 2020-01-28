@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.apollographql.apollo</groupId>
+  <artifactId>apollo-compiler</artifactId>
+  <versioning>
+    <versions>
+      <version>1.3.1-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20200128123203</lastUpdated>
+  </versioning>
+</metadata>
